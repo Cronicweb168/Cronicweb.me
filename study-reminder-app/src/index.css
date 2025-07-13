@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Material You (Material 3) color system variables */
+:root {
+  --md-sys-color-primary: #6750a4;
+  --md-sys-color-secondary: #625b71;
+  --md-sys-color-tertiary: #7d5260;
+  --md-sys-color-background: #fffbfe;
+  --md-sys-color-surface: #fffbfe;
+  --md-sys-color-error: #b3261e;
+  --md-sys-color-outline: #79747e;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Replace with dark theme tokens if desired */
+    --md-sys-color-primary: #d0bcff;
+    --md-sys-color-secondary: #ccc2dc;
+    --md-sys-color-tertiary: #efb8c8;
+    --md-sys-color-background: #1c1b1f;
+    --md-sys-color-surface: #1c1b1f;
+    --md-sys-color-error: #f2b8b5;
+    --md-sys-color-outline: #938f99;
+  }
+}
+
+body {
+  @apply bg-md-background text-gray-900 dark:text-gray-100 min-h-screen;
+}
