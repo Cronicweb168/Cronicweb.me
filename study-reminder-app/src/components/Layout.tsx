@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import type { PropsWithChildren } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FiMenu } from 'react-icons/fi';
+import { FiMenu, FiHome, FiClock, FiYoutube, FiCpu } from 'react-icons/fi';
 
 const navItems = [
-  { to: '/', label: 'Dashboard' },
-  { to: '/reminders', label: 'Reminders' },
-  { to: '/playlists', label: 'Playlists' },
-  { to: '/ai-tools', label: 'AI Tools' },
+  { to: '/', label: 'Dashboard', icon: <FiHome /> },
+  { to: '/reminders', label: 'Reminders', icon: <FiClock /> },
+  { to: '/playlists', label: 'Playlists', icon: <FiYoutube /> },
+  { to: '/ai-tools', label: 'AI Tools', icon: <FiCpu /> },
 ];
 
 export default function Layout({ children }: PropsWithChildren) {
@@ -35,7 +35,10 @@ export default function Layout({ children }: PropsWithChildren) {
               }
               onClick={() => setOpen(false)}
             >
-              {item.label}
+              <span className="flex items-center gap-2">
+                {item.icon}
+                {item.label}
+              </span>
             </NavLink>
           ))}
         </nav>
