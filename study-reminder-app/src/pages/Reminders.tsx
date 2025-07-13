@@ -10,7 +10,7 @@ export default function Reminders() {
 
       {/* Floating Action Button */}
       <button
-        className="fixed bottom-6 right-6 md:right-10 md:bottom-10 w-14 h-14 rounded-full bg-md-primary text-white shadow-lg hover:shadow-xl transition"
+        className="fixed bottom-6 right-6 md:right-10 md:bottom-10 w-14 h-14 rounded-full bg-md-primary text-white shadow-lg hover:shadow-xl transition flex items-center justify-center text-3xl"
         aria-label="Add reminder"
       >
         +
