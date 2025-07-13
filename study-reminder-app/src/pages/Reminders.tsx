@@ -3,9 +3,18 @@ export default function Reminders() {
     <div className="relative space-y-4">
       <h1 className="text-3xl font-bold text-md-primary">Reminders</h1>
       <ul className="space-y-2">
-        <li className="p-3 rounded-lg shadow bg-md-surface flex justify-between">
-          <span className="text-md-secondary">No reminders yet.</span>
-        </li>
+        {[
+          { id: 1, title: 'Read Chapter 3', time: 'Today · 6:00 PM' },
+          { id: 2, title: 'Watch Photosynthesis video', time: 'Tomorrow · 10:00 AM' },
+        ].map((r) => (
+          <li key={r.id} className="p-4 rounded-lg shadow bg-md-surface flex items-center justify-between">
+            <div>
+              <h3 className="font-medium text-md-primary">{r.title}</h3>
+              <p className="text-xs text-md-secondary">{r.time}</p>
+            </div>
+            <button className="text-sm text-md-primary hover:underline">Done</button>
+          </li>
+        ))}
       </ul>
 
       {/* Floating Action Button */}

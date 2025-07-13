@@ -17,7 +17,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <div className="flex h-screen bg-md-background">
       {/* Side Drawer */}
       <div
-        className={`fixed inset-y-0 left-0 w-64 bg-md-surface shadow-lg transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed inset-y-0 left-0 w-64 bg-md-surface shadow-xl transition-transform duration-300 ease-in-out z-40 ${
           open ? 'translate-x-0' : '-translate-x-full'
         } md:translate-x-0`}
       >
@@ -29,8 +29,8 @@ export default function Layout({ children }: PropsWithChildren) {
               to={item.to}
               end
               className={({ isActive }) =>
-                `rounded px-3 py-2 text-md-secondary hover:bg-md-outline/10 transition ${
-                  isActive ? 'bg-md-outline/20 font-medium' : ''
+                `flex items-center gap-3 rounded px-3 py-2 text-md-secondary hover:bg-md-outline/10 transition-colors duration-150 ${
+                  isActive ? 'bg-md-primary/15 text-md-primary font-medium' : ''
                 }`
               }
               onClick={() => setOpen(false)}
