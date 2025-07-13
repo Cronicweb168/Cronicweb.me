@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Material You - Light Theme Colors */
+  --md-sys-color-primary: #6750a4;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #e9ddff;
+  --md-sys-color-on-primary-container: #22005d;
+  
+  --md-sys-color-secondary: #625b71;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #e8def8;
+  --md-sys-color-on-secondary-container: #1e192b;
+  
+  --md-sys-color-tertiary: #7d5260;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #ffd9e3;
+  --md-sys-color-on-tertiary-container: #31101d;
+  
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #ffdad6;
+  --md-sys-color-on-error-container: #410002;
+  
+  --md-sys-color-surface: #fdf7ff;
+  --md-sys-color-on-surface: #1d1b20;
+  --md-sys-color-surface-variant: #e7e0ec;
+  --md-sys-color-on-surface-variant: #49454e;
+  
+  --md-sys-color-background: #fdf7ff;
+  --md-sys-color-on-background: #1d1b20;
+  
+  --md-sys-color-outline: #7a757f;
+  --md-sys-color-outline-variant: #cac4cf;
+  
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  
+  --md-sys-color-inverse-surface: #322f35;
+  --md-sys-color-inverse-on-surface: #f5eff7;
+  --md-sys-color-inverse-primary: #cfbcff;
+}
+
+.dark {
+  /* Material You - Dark Theme Colors */
+  --md-sys-color-primary: #cfbcff;
+  --md-sys-color-on-primary: #381e72;
+  --md-sys-color-primary-container: #4f378a;
+  --md-sys-color-on-primary-container: #e9ddff;
+  
+  --md-sys-color-secondary: #cbc2db;
+  --md-sys-color-on-secondary: #332d41;
+  --md-sys-color-secondary-container: #4a4458;
+  --md-sys-color-on-secondary-container: #e8def8;
+  
+  --md-sys-color-tertiary: #efb8c8;
+  --md-sys-color-on-tertiary: #4a2532;
+  --md-sys-color-tertiary-container: #633b48;
+  --md-sys-color-on-tertiary-container: #ffd9e3;
+  
+  --md-sys-color-error: #ffb4ab;
+  --md-sys-color-on-error: #690005;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffdad6;
+  
+  --md-sys-color-surface: #141218;
+  --md-sys-color-on-surface: #e6e0e9;
+  --md-sys-color-surface-variant: #49454e;
+  --md-sys-color-on-surface-variant: #cac4cf;
+  
+  --md-sys-color-background: #141218;
+  --md-sys-color-on-background: #e6e0e9;
+  
+  --md-sys-color-outline: #948f99;
+  --md-sys-color-outline-variant: #49454e;
+  
+  --md-sys-color-shadow: #000000;
+  --md-sys-color-scrim: #000000;
+  
+  --md-sys-color-inverse-surface: #e6e0e9;
+  --md-sys-color-inverse-on-surface: #322f35;
+  --md-sys-color-inverse-primary: #6750a4;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+  
+  body {
+    @apply bg-md-sys-color-background text-md-sys-color-on-surface;
+    font-family: 'Roboto Flex', system-ui, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+  }
+  
+  /* Typography scales */
+  .display-large {
+    @apply text-6xl leading-tight tracking-tight font-normal;
+  }
+  
+  .display-medium {
+    @apply text-5xl leading-tight tracking-tight font-normal;
+  }
+  
+  .display-small {
+    @apply text-4xl leading-tight tracking-tight font-normal;
+  }
+  
+  .headline-large {
+    @apply text-3xl leading-tight font-normal;
+  }
+  
+  .headline-medium {
+    @apply text-2xl leading-tight font-normal;
+  }
+  
+  .headline-small {
+    @apply text-xl leading-tight font-normal;
+  }
+  
+  .title-large {
+    @apply text-lg leading-normal font-medium;
+  }
+  
+  .title-medium {
+    @apply text-base leading-normal font-medium tracking-wide;
+  }
+  
+  .title-small {
+    @apply text-sm leading-normal font-medium tracking-wide;
+  }
+  
+  .body-large {
+    @apply text-base leading-relaxed font-normal;
+  }
+  
+  .body-medium {
+    @apply text-sm leading-normal font-normal;
+  }
+  
+  .body-small {
+    @apply text-xs leading-normal font-normal;
+  }
+  
+  .label-large {
+    @apply text-sm leading-normal font-medium tracking-wide;
+  }
+  
+  .label-medium {
+    @apply text-xs leading-normal font-medium tracking-wider;
+  }
+  
+  .label-small {
+    @apply text-xs leading-normal font-medium tracking-wider;
+  }
+}
+
+@layer components {
+  /* Ripple effect */
+  .ripple {
+    @apply relative overflow-hidden;
+  }
+  
+  .ripple::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+  }
+  
+  .ripple span.ripple-effect {
+    @apply absolute rounded-full bg-current opacity-25 animate-ripple;
+    transform: scale(0);
+  }
+  
+  /* State layers */
+  .state-layer {
+    @apply relative;
+  }
+  
+  .state-layer::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none rounded-inherit transition-opacity;
+    background-color: currentColor;
+    opacity: 0;
+  }
+  
+  .state-layer:hover::after {
+    opacity: 0.08;
+  }
+  
+  .state-layer:focus::after {
+    opacity: 0.12;
+  }
+  
+  .state-layer:active::after {
+    opacity: 0.12;
+  }
+  
+  /* Material You Button */
+  .btn-filled {
+    @apply relative inline-flex items-center justify-center px-6 py-2.5 rounded-full
+           bg-md-sys-color-primary text-md-sys-color-on-primary
+           label-large tracking-wide
+           transition-all duration-200 ease-in-out
+           hover:shadow-elevation-2 focus:shadow-elevation-1
+           disabled:opacity-40 disabled:pointer-events-none
+           state-layer;
+  }
+  
+  .btn-outlined {
+    @apply relative inline-flex items-center justify-center px-6 py-2.5 rounded-full
+           border border-md-sys-color-outline text-md-sys-color-primary
+           label-large tracking-wide
+           transition-all duration-200 ease-in-out
+           hover:bg-md-sys-color-primary hover:bg-opacity-8
+           focus:border-md-sys-color-primary
+           disabled:opacity-40 disabled:pointer-events-none
+           state-layer;
+  }
+  
+  .btn-text {
+    @apply relative inline-flex items-center justify-center px-3 py-2.5 rounded-full
+           text-md-sys-color-primary
+           label-large tracking-wide
+           transition-all duration-200 ease-in-out
+           hover:bg-md-sys-color-primary hover:bg-opacity-8
+           disabled:opacity-40 disabled:pointer-events-none
+           state-layer;
+  }
+  
+  .btn-fab {
+    @apply relative inline-flex items-center justify-center w-14 h-14 rounded-lg
+           bg-md-sys-color-primary-container text-md-sys-color-on-primary-container
+           shadow-elevation-3 transition-all duration-200 ease-in-out
+           hover:shadow-elevation-4
+           disabled:opacity-40 disabled:pointer-events-none
+           state-layer;
+  }
+  
+  /* Material You Card */
+  .card {
+    @apply bg-md-sys-color-surface rounded-lg p-4
+           shadow-elevation-1 transition-shadow duration-200;
+  }
+  
+  .card-elevated {
+    @apply bg-md-sys-color-surface-variant rounded-lg p-4
+           shadow-elevation-2 transition-shadow duration-200
+           hover:shadow-elevation-3;
+  }
+  
+  /* Material You Input */
+  .input-outlined {
+    @apply w-full px-4 py-3 rounded-sm
+           bg-transparent
+           border border-md-sys-color-outline
+           text-md-sys-color-on-surface
+           placeholder:text-md-sys-color-on-surface-variant
+           focus:outline-none focus:border-md-sys-color-primary focus:border-2
+           transition-all duration-200;
+  }
+  
+  .input-filled {
+    @apply w-full px-4 py-3 rounded-t-sm
+           bg-md-sys-color-surface-variant
+           border-b-2 border-md-sys-color-on-surface-variant
+           text-md-sys-color-on-surface
+           placeholder:text-md-sys-color-on-surface-variant
+           focus:outline-none focus:border-md-sys-color-primary
+           transition-all duration-200;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-md-sys-color-surface;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-md-sys-color-outline-variant rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-md-sys-color-outline;
+}
+
+/* Selection */
+::selection {
+  @apply bg-md-sys-color-primary text-md-sys-color-on-primary;
+}
