@@ -1,8 +1,21 @@
 export default function Dashboard() {
   return (
-    <div>
-      <h1 className="text-2xl font-bold text-md-primary mb-4">Dashboard</h1>
-      <p className="text-md-secondary">Overview of your study progress will appear here.</p>
+    <div className="space-y-6">
+      <h1 className="text-3xl font-bold text-md-primary">Dashboard</h1>
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="p-4 rounded-lg shadow bg-md-surface">
+          <h2 className="font-semibold text-md-primary">Today’s Reminders</h2>
+          <p className="text-sm text-md-secondary">0 tasks due</p>
+        </div>
+        <div className="p-4 rounded-lg shadow bg-md-surface">
+          <h2 className="font-semibold text-md-primary">YouTube Progress</h2>
+          <p className="text-sm text-md-secondary">Watch 5 videos to reach next milestone</p>
+        </div>
+        <div className="p-4 rounded-lg shadow bg-md-surface">
+          <h2 className="font-semibold text-md-primary">AI Suggestions</h2>
+          <p className="text-sm text-md-secondary">Generate a new study plan</p>
+        </div>
+      </div>
     </div>
   );
 }

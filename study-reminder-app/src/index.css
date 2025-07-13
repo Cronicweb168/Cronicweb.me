@@ -28,5 +28,6 @@
 
 body {
   background-color: var(--md-sys-color-background);
-  @apply text-gray-900 dark:text-gray-100 min-h-screen;
+  color: #1c1b1f;
+  @apply dark:text-gray-100 min-h-screen;
 }
