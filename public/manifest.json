@@ -1,0 +1,127 @@
+{
+  "name": "Study Reminder App",
+  "short_name": "StudyReminder",
+  "description": "AI-Powered Study Reminder & Planning Tool with Material You Design",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#6750A4",
+  "theme_color": "#6750A4",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["education", "productivity", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add Reminder",
+      "short_name": "Add",
+      "description": "Create a new study reminder",
+      "url": "/reminders?action=add",
+      "icons": [
+        {
+          "src": "/add-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "View Playlists",
+      "short_name": "Playlists",
+      "description": "View YouTube playlists",
+      "url": "/playlists",
+      "icons": [
+        {
+          "src": "/playlist-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "AI Assistant",
+      "short_name": "AI",
+      "description": "Get AI study help",
+      "url": "/ai",
+      "icons": [
+        {
+          "src": "/ai-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "display_override": ["window-controls-overlay", "standalone", "browser"],
+  "protocol_handlers": [
+    {
+      "protocol": "web+studyreminder",
+      "url": "/import?url=%s"
+    }
+  ]
+}
